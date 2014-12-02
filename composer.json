@@ -1,0 +1,22 @@
+{
+    "name": "huge/laravel5-html",
+    "description": "",
+    "authors": [
+        {
+            "name": "huge",
+            "email": "slin@hubee.tv"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Huge\\Laravel5Html\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
