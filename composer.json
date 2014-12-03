@@ -16,7 +16,10 @@
         ],
         "psr-0": {
             "Huge\\Laravel5Html\\": "src/"
-        }
+        },
+        "files": [
+          "src/Huge/Laravel5Html/helpers.php"
+        ]
     },
     "minimum-stability": "dev"
 }

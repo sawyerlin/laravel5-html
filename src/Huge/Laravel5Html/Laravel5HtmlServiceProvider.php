@@ -1,6 +1,8 @@
 <?php namespace Huge\Laravel5Html;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\UrlGenerator;
+use View;
 
 class Laravel5HtmlServiceProvider extends ServiceProvider {
 
@@ -30,7 +32,11 @@ class Laravel5HtmlServiceProvider extends ServiceProvider {
 	{
     $this->registerLaravel5FormBuilder();
 
+    $this->registerLaravel5HtmlBuilder();
+
     $this->app->alias('laravel5-html.form', 'Illuminate\Html\Laravel5FormBuilder');
+    
+    $this->app->alias('laravel5-html.html', 'Illuminate\Html\Laravel5HtmlBuilder');
 	}
 
   protected function registerLaravel5FormBuilder() {
@@ -45,6 +51,16 @@ class Laravel5HtmlServiceProvider extends ServiceProvider {
 
   }
 
+  protected function registerLaravel5HtmlBuilder() {
+
+    $this->app->bindShared('laravel5-html.html', function($app) {
+
+      return new Laravel5HtmlBuilder($app['url']);
+
+    });
+
+  }
+
 	/**
 	 * Get the services provided by the provider.
 	 *
@@ -52,7 +68,6 @@ class Laravel5HtmlServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return ['laravel5-html.form'];
+		return ['laravel5-html.html', 'laravel5-html.form'];
 	}
-
 }

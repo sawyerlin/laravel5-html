@@ -2,6 +2,7 @@
 
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Html\HtmlBuilder;
+use View;
 
 class Laravel5HtmlBuilder extends HtmlBuilder {
 
@@ -9,10 +10,8 @@ class Laravel5HtmlBuilder extends HtmlBuilder {
     parent::__construct($url);
   }
 
-  public function breadcrumb(array $crumbs = array(), $seperator = '>', $seperatorClass, array $buttons = array()) {
-
-
-
+  public function breadcrumb(array $crumbs, $seperator, $seperatorClass, $buttons) {
+    $breadcrumb = View::make('laravel5-html::breadcrumb', ['crumbs' => $crumbs, 'seperator' => '>', 'buttons' => $buttons]);
+    return $breadcrumb;
   }
-
 }
