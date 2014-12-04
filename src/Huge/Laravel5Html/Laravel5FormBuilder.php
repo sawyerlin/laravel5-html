@@ -58,5 +58,4 @@ class Laravel5FormBuilder extends FormBuilder {
 	{
 		return $this->input($type, $name, $value, $options).$text.'</input>';
 	}
-
 }
