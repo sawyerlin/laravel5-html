@@ -19,9 +19,10 @@ class Laravel5HtmlBuilder extends HtmlBuilder {
 
   }
 
-  public function model($id, $title, $template, $data) {
+  // ToDo: to modal
+  public function modal($id, $title, $template, $data) {
 
-    $model = View::make('laravel5-html::model', compact('id', 'title', 'template', 'data'));
+    $model = View::make('laravel5-html::modal', compact('id', 'title', 'template', 'data'));
 
     return $model;
   
