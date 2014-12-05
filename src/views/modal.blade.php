@@ -6,7 +6,7 @@
             <h4 class="modal-title" id="myModalLabel">{{ $title }}</h4>
           </div>
           {{-- The template shoud contains modal-body and modal-footer div elements --}}
-          @include($template, ['brand' => $data])
+          @include($template, ['data' => $data])
           <div class="clearfix"></div>
       </div>
   </div>
