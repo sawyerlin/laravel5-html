@@ -23,7 +23,7 @@
       {!! Form::submit(_($button['name']), ['class' => 'btn btn-primary btn-large', 'role' => 'button']) !!} 
 
     @elseif ($button['type'] === 'toggle')
-      
+
       {!! link_to_toggle_with_children($button['id'], _($button['name']), array('class' => 'btn btn-primary btn-large', 'role' => 'button'), '<span class="glyphicon glyphicon-'.$button['icon'].'" aria-hidden="true"></span>') !!} 
 
     @endif

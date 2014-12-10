@@ -19,6 +19,14 @@ class Laravel5HtmlBuilder extends HtmlBuilder {
 
   }
 
+  public function carousel($id, array $images) {
+
+      $carousel = View::make('laravel5-html::carousel', compact('id', 'images'));
+
+      return $carousel;
+  
+  }
+
   // ToDo: to modal
   public function modal($id, $title, $template, $data) {
 
