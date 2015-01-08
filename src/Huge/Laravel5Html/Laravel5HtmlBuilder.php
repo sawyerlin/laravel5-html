@@ -27,6 +27,14 @@ class Laravel5HtmlBuilder extends HtmlBuilder {
   
   }
 
+  public function steps(array $steps,$current) {
+
+      $steps = View::make('laravel5-html::steps', compact('steps', 'current'));
+
+      return $steps;
+  
+  }
+
   // ToDo: to modal
   public function modal($id, $title, $template, $data) {
 
