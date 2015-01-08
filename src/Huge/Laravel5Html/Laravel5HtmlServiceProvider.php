@@ -20,7 +20,7 @@ class Laravel5HtmlServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('huge/laravel5-html');
+//        $this->package('huge/laravel5-html');
     }
 
     /**
